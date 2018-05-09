@@ -144,7 +144,7 @@ setxkbmap -option caps:super
 setxkbmap -option keypad:pointerkeys 
 
 # Vim mode
-set -o vim
+set -o vi
 
 # Git Aliases
 alias gs='git status'
