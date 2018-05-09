@@ -124,10 +124,6 @@ fi
 #Steve Aliases
 alias l='ls -ltrh --color=auto'
 alias la='ls -altrh --color=auto'
-alias gs='git status'
-alias gl='git log'
-alias gd='git diff'
-alias gc='git commit -m '
 alias ebrc='vi ~/.bashrc'
 alias v='vim'
 alias vi='vim'
@@ -146,3 +142,14 @@ export PATH=$PATH:~/.cargo/bin
 # Bind Capslock to Windows Key (Super)
 setxkbmap -option caps:super
 setxkbmap -option keypad:pointerkeys 
+
+# Vim mode
+set -o vim
+
+# Git Aliases
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gc='git commit -m '
+alias gitsetoriginurl="git remote set-url origin "
+alias gitaddoriginurl="git remote add origin "
