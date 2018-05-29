@@ -144,7 +144,7 @@ setxkbmap -option caps:super
 setxkbmap -option keypad:pointerkeys 
 
 # Vim mode
-set -o vim
+set -o vi
 
 # Git Aliases
 alias gs='git status'
@@ -153,3 +153,7 @@ alias gd='git diff'
 alias gc='git commit -m '
 alias gitsetoriginurl="git remote set-url origin "
 alias gitaddoriginurl="git remote add origin "
+
+gitclone() {
+    git clone https://$1@github.com/$1/$2 
+}
