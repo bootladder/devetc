@@ -128,6 +128,8 @@ alias ebrc='vi ~/.bashrc'
 alias v='vim'
 alias vi='vim'
 
+alias sls='screen -ls'
+
 cdlfunc() {
     cd "$1"; l
 }
