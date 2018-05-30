@@ -127,6 +127,7 @@ alias la='ls -altrh --color=auto'
 alias ebrc='vi ~/.bashrc'
 alias v='vim'
 alias vi='vim'
+alias f='find . -name '
 
 alias sls='screen -ls'
 
