@@ -128,6 +128,8 @@ alias ebrc='vi ~/.bashrc'
 alias v='vim'
 alias vi='vim'
 
+alias sls='screen -ls'
+
 cdlfunc() {
     cd "$1"; l
 }
@@ -153,3 +155,7 @@ alias gd='git diff'
 alias gc='git commit -m '
 alias gitsetoriginurl="git remote set-url origin "
 alias gitaddoriginurl="git remote add origin "
+
+gitclone() {
+    git clone https://$1@github.com/$1/$2 
+}
