@@ -156,6 +156,9 @@ alias gc='git commit -m '
 alias gitsetoriginurl="git remote set-url origin "
 alias gitaddoriginurl="git remote add origin "
 
-gitclone() {
+githubclone() {
     git clone https://$1@github.com/$1/$2 
+}
+bitbucketclone() {
+    git clone https://$1@bitbucket.org/$1/$2 
 }
