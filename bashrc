@@ -154,6 +154,7 @@ alias gs='git status'
 alias gl='git log'
 alias gd='git diff'
 alias gc='git commit -m '
+alias gpom='git push origin master'
 alias gitsetoriginurl="git remote set-url origin "
 alias gitaddoriginurl="git remote add origin "
 
