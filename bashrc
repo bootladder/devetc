@@ -130,6 +130,7 @@ alias vi='vim'
 alias f='find . -name '
 
 alias sls='screen -ls'
+alias hopper='/opt/hopper-v4/bin/Hopper -e '
 
 cdlfunc() {
     cd "$1"; l
