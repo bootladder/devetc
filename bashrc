@@ -165,3 +165,27 @@ githubclone() {
 bitbucketclone() {
     git clone https://$1@bitbucket.org/$1/$2 
 }
+
+checkInitTimer() {
+  if [ -e /tmp/timerOn ]; then
+    echo nothing > /dev/null
+  else
+    echo /tmp/timerOn does not exist
+    echo 0 > /tmp/timerOn
+  fi
+}
+startTimer() {
+  echo 1 > /tmp/timerOn
+  sleep 30
+  echo 0 > /tmp/timerOn
+}
+printTodo() {
+    checkInitTimer
+    if [ 0 -eq $(cat /tmp/timerOn) ];then
+      startTimer &
+      cat ~/Documents/todo.txt
+    fi
+}
+printTodo
+
+
