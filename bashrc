@@ -128,6 +128,7 @@ alias ebrc='vi ~/.bashrc'
 alias v='vim'
 alias vi='vim'
 alias f='find . -name '
+alias c='clear'
 
 alias sls='screen -ls'
 alias hopper='/opt/hopper-v4/bin/Hopper -e '
@@ -158,6 +159,7 @@ alias gc='git commit -m '
 alias gpom='git push origin master'
 alias gitsetoriginurl="git remote set-url origin "
 alias gitaddoriginurl="git remote add origin "
+alias restartnetworkmanager="sudo service network-manager restart"
 
 githubclone() {
     git clone https://$1@github.com/$1/$2 
@@ -166,26 +168,7 @@ bitbucketclone() {
     git clone https://$1@bitbucket.org/$1/$2 
 }
 
-checkInitTimer() {
-  if [ -e /tmp/timerOn ]; then
-    echo nothing > /dev/null
-  else
-    echo /tmp/timerOn does not exist
-    echo 0 > /tmp/timerOn
-  fi
-}
-startTimer() {
-  echo 1 > /tmp/timerOn
-  sleep 30
-  echo 0 > /tmp/timerOn
-}
-printTodo() {
-    checkInitTimer
-    if [ 0 -eq $(cat /tmp/timerOn) ];then
-      startTimer &
-      cat ~/Documents/todo.txt
-    fi
-}
-printTodo
-
+if [ -e /usr/bin/shtodo ]; then
+    /usr/bin/shtodo
+fi
 
