@@ -171,4 +171,5 @@ bitbucketclone() {
 if [ -e /usr/bin/shtodo ]; then
     /usr/bin/shtodo
 fi
-
+alias vitodo='vi ~/Documents/todo.txt'
+alias cattodo='cat ~/Documents/todo.txt'
