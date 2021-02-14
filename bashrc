@@ -125,11 +125,22 @@ fi
 alias l='ls -ltrh --color=auto'
 alias la='ls -altrh --color=auto'
 alias ebrc='vi ~/.bashrc'
+alias sbrc='source ~/.bashrc'
 alias v='vim'
 alias vi='vim'
-alias f='find . -name '
 alias c='clear'
-
+alias gs='git status'
+alias gd='git diff'
+alias gc='git commit'
+alias f="find . -name "
+alias copy='xclip -sel clip'
+alias screenshot='gnome-screenshot -a'
+alias tree='tree --du -h'
+alias gpom='git push origin master'
+alias grao='git remote add origin'
+alias mv='mv -i'
+alias grv='git remote -v'
+alias gcfd='git clean -f -d'
 alias sls='screen -ls'
 alias hopper='/opt/hopper-v4/bin/Hopper -e '
 
@@ -138,18 +149,22 @@ cdlfunc() {
 }
 alias cdl=cdlfunc
 
+function c(){
+	echo cd $1;
+	cd $1;
+	l
+}
+
 #Environment
 export GOPATH=~/prog/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/prog/go/bin
 export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:~/.emacs.d/bin/
 
 # Bind Capslock to Windows Key (Super)
 setxkbmap -option caps:super
 setxkbmap -option keypad:pointerkeys 
-
-# Vim mode
-set -o vi
 
 # Git Aliases
 alias gs='git status'
@@ -173,3 +188,9 @@ if [ -e /usr/bin/shtodo ]; then
 fi
 alias vitodo='vi ~/Documents/todo.txt'
 alias cattodo='cat ~/Documents/todo.txt'
+
+
+source /usr/local/etc/advanced-shell-history/config
+export ASH_CFG_SYSTEM_QUERY_FILE
+source /usr/local/lib/advanced_shell_history/sh/bash
+
