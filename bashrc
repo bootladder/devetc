@@ -129,9 +129,6 @@ alias sbrc='source ~/.bashrc'
 alias v='vim'
 alias vi='vim'
 alias c='clear'
-alias gs='git status'
-alias gd='git diff'
-alias gc='git commit'
 alias f="find . -name "
 alias copy='xclip -sel clip'
 alias screenshot='gnome-screenshot -a'
@@ -143,6 +140,24 @@ alias grv='git remote -v'
 alias gcfd='git clean -f -d'
 alias sls='screen -ls'
 alias hopper='/opt/hopper-v4/bin/Hopper -e '
+
+# Git Aliases
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gc='git commit -m '
+alias gpom='git push origin master'
+alias gitsetoriginurl="git remote set-url origin "
+alias gitaddoriginurl="git remote add origin "
+
+alias restartnetworkmanager="sudo service network-manager restart"
+
+githubclone() {
+    git clone https://$1@github.com/$1/$2 
+}
+bitbucketclone() {
+    git clone https://$1@bitbucket.org/$1/$2 
+}
 
 cdlfunc() {
     cd "$1"; l
@@ -165,23 +180,6 @@ export PATH=$PATH:~/.emacs.d/bin/
 # Bind Capslock to Windows Key (Super)
 setxkbmap -option caps:super
 setxkbmap -option keypad:pointerkeys 
-
-# Git Aliases
-alias gs='git status'
-alias gl='git log'
-alias gd='git diff'
-alias gc='git commit -m '
-alias gpom='git push origin master'
-alias gitsetoriginurl="git remote set-url origin "
-alias gitaddoriginurl="git remote add origin "
-alias restartnetworkmanager="sudo service network-manager restart"
-
-githubclone() {
-    git clone https://$1@github.com/$1/$2 
-}
-bitbucketclone() {
-    git clone https://$1@bitbucket.org/$1/$2 
-}
 
 if [ -e /usr/bin/shtodo ]; then
     /usr/bin/shtodo
